@@ -12,3 +12,6 @@ if you wish to use another password for the response code database, change the b
 1) dom_installer.sh
 2) /usr/local/cpanel/base/frontend/paper_lantern/dom_site_monitor/dbconnect.php
 
+Cron Setup.
+The script runs in two phases, one normally, and one with the -r flag (to recheck).
+You can set intervals by editing these crons in the crontab, just make sure that you have given it enough time to complete before running -r, as passing the recheck flag will log the result, and mail the email address you have configured in WHM.
