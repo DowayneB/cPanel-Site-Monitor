@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /root
 #download all files and unzip
-wget http://deeznuts.dedicated.co.za/dom_site_monitor.zip
+wget https://github.com/DowayneB/cPanel-Site-Monitor/raw/master/dom_site_monitor.zip
 unzip dom_site_monitor.zip
 cd dom_site_monitor_installer
 /usr/local/cpanel/scripts/install_plugin dom_site_monitor.tar.gz
