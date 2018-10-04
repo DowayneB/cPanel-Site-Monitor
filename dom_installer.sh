@@ -10,7 +10,9 @@ mkdir $plugindir
 cp web/* $plugindir
 
 #create database, and it's user
-mysql -e "create database dom_site_monitor; use dom_site_monitor; grant all privileges on dom_site_monitor to 'dom_site_monitor'@'localhost' identified by '8r56ai9y5M-1';"
+read -p "DB Username:" username
+read -p "DB User Password: " pass
+mysql -e "create database dom_site_monitor; use dom_site_monitor; grant all privileges on dom_site_monitor to '$username'@'localhost' identified by '$pass';"
 mysql dom_site_monitor < responsecodes.sql
 mysql -e "use dom_site_monitor; grant all privileges on codes to 'dom_site_monitor'@'localhost' identified by '8r56ai9y5M-1';"
 
