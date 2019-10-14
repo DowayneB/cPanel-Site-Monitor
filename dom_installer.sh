@@ -14,7 +14,10 @@ read -p "DB Username:" username
 read -p "DB User Password: " pass
 mysql -e "create database dom_site_monitor; use dom_site_monitor; grant all privileges on dom_site_monitor to '$username'@'localhost' identified by '$pass';"
 mysql dom_site_monitor < responsecodes.sql
-mysql -e "use dom_site_monitor; grant all privileges on codes to 'dom_site_monitor'@'localhost' identified by '8r56ai9y5M-1';"
+mysql -e "use dom_site_monitor; grant all privileges on codes to '$username'@'localhost' identified by '$pass';"
+
+#store the created db credentials
+sed 's/defaultuser/'$username'/' ./web/dbconnect.php.dist | sed 's/defaultuser/'$username'/' ./web/dbconnect.php.dist > ./web/dbconnect.php
 
 #copy site_monitor script to /usr/bin/, and make executable.
 cp dom_site_monitor.sh /usr/bin/dom_site_monitor

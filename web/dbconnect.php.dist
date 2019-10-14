@@ -1,0 +1,9 @@
+<?php
+try {
+    $username='defaultuser';
+    $password='defaultpassword';
+    $db = new PDO('mysql:host=localhost;dbname=dom_site_monitor',$username,$password);
+} catch (PDOException $e) {
+ print "Error!: ". $e->getMessage(). "</br>";
+ die();
+}
