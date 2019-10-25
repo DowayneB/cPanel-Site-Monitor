@@ -1,6 +1,6 @@
 #!/bin/bash
 #Script to do a daily monitor of websites
-eWritten by Dowayne Breedt 
+# Author : Dowayne Breedt 
 
 #The enable button creates a directory in the users home directory called ah_monitor, and inserts the site name into ahsite.conf, and adds / removes the site from the sitelist in /etc
 
