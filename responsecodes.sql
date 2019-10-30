@@ -55,6 +55,7 @@ INSERT INTO `codes` VALUES
 ('416','Range Not Satisfiable (RFC 7233)','The client has asked for a portion of the file (byte serving), but the server cannot supply that portion. For example, if the client asked for a part of the file that lies beyond the end of the file.[47] Called \"Requested Range Not Satisfiable\" previously'),
 ('417','Expectation Failed','The server cannot meet the requirements of the Expect request-header field.'),
 ('418','Im a teapot (RFC 2324)','This HTTP status is used as an Easter egg in some websites, including Google.com'),
+('419', 'Page Expired', 'Used by the Laravel Framework when a CSRF Token is missing or expired.'),
 ('421','Misdirected Request (RFC 7540)','The request was directed at a server that is not able to produce a response.[52] (for example because of a connection reuse)'),
 ('422','Unprocessable Entity (WebDAV; RFC 4918)','The request was well-formed but was unable to be followed due to semantic errors.'),
 ('423','Locked (WebDAV; RFC 4918)','The resource that is being accessed is locked.'),
@@ -62,6 +63,7 @@ INSERT INTO `codes` VALUES
 ('426','Upgrade Required','The client should switch to a different protocol such as TLS/1.0, given in the Upgrade header field.'),
 ('428','Precondition Required (RFC 6585)','The origin server requires the request to be conditional. Intended to prevent the lost update problem, where a client GETs a resources state, modifies it, and PUTs it back to the server, when meanwhile a third party has modified the state on the server, l'),
 ('429','Too Many Requests (RFC 6585)','The user has sent too many requests in a given amount of time. Intended for use with rate-limiting schemes.'),
+('430', 'Request Header Fields Too Large', 'Used by Shopify, instead of the 429 Too Many Requests response code, when too many URLs are requested within a certain time frame'),
 ('431','Request Header Fields Too Large (RFC 6585)','The server is unwilling to process the request because either an individual header field, or all the header fields collectively, are too large.'),
 ('451','Unavailable For Legal Reasons (RFC 7725)','A server operator has received a legal demand to deny access to a resource or to a set of resources that includes the requested resource.[56] The code 451 was chosen as a reference to the novel Fahrenheit 451.'),
 ('500','Internal Server Error','A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.'),
@@ -73,8 +75,10 @@ INSERT INTO `codes` VALUES
 ('506','Variant Also Negotiates (RFC 2295)','Transparent content negotiation for the request results in a circular reference.'),
 ('507','Insufficient Storage (WebDAV; RFC 4918)','The server is unable to store the representation needed to complete the request.'),
 ('508','Loop Detected (WebDAV; RFC 5842)','The server detected an infinite loop while processing the request (sent in lieu of 208 Already Reported).'),
+('509', 'Bandwidth Limit Exceeded', 'The server has exceeded the bandwidth specified by the server administrator; this is often used by shared hosting providers to limit the bandwidth of customers.'),
 ('510','Not Extended (RFC 2774)','Further extensions to the request are required for the server to fulfil it.'),
-('511','Network Authentication Required (RFC 6585)','The client needs to authenticate to gain network access. Intended for use by intercepting proxies used to control access to the network (e.g., \"captive portals\" used to require agreement to Terms of Service before granting full Internet access via a Wi-Fi')
+('511','Network Authentication Required (RFC 6585)','The client needs to authenticate to gain network access. Intended for use by intercepting proxies used to control access to the network (e.g., \"captive portals\" used to require agreement to Terms of Service before granting full Internet access via a Wi-Fi'),
+('526', 'Invalid SSL Certificate', 'Used by Cloudflare and Cloud Foundry''s gorouter to indicate failure to validate the SSL/TLS certificate that the origin server presented.')
 ;
 /*!40000 ALTER TABLE `codes` ENABLE KEYS */;
 UNLOCK TABLES;
